@@ -8,7 +8,13 @@ const app = express();
 
 /** middlewares */
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://secure-login-and-signup-system.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 app.use(morgan('tiny'));
 app.disable('x-powered-by'); // less hackers know about our stack
 
