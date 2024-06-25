@@ -40,8 +40,8 @@ export const registerMail = async (req, res) => {
     var email = {
         body : {
             name: username,
-            intro : text || 'Welcome to Daily Tuition! We\'re very excited to have you on board.',
-            outro: 'Need help, or have questions? Just reply to this email, we\'d love to help.'
+            intro : text || 'Welcome to Authentication App! We\'re very excited to have you on board.',
+            outro: 'Have a great day ahead!'
         }
     }
 
