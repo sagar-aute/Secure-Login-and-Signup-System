@@ -1,8 +1,4 @@
 {
-  "scripts": {
-    "server": "nodemon server.js",
-    "build": "npm install --prefix ./client && npm run build --prefix ./client && npm install"
-  },
   "dependencies": {
     "formik": "^2.4.3",
     "react-hot-toast": "^2.4.1",
