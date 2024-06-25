@@ -4,6 +4,13 @@ import morgan from 'morgan';
 import connect from './database/conn.js';
 import router from './router/route.js';
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// resolving dirname to es module
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 const app = express();
 
 /** middlewares */
@@ -16,13 +23,19 @@ app.disable('x-powered-by'); // less hackers know about our stack
 const port = 8080;
 
 /** HTTP GET Request */
-app.get('/', (req, res) => {
-    res.status(201).json("Home GET Request");
-});
+// app.get('/', (req, res) => {
+//     res.status(201).json("Home GET Request");
+// });
 
 
 /** api routes */
 app.use('/api', router)
+
+// use the client app
+app.use(express.static(path.join(__dirname, '/client/build/')));
+
+// render client for any path
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, '/client/build/index.html')));
 
 /** start server only when we have valid connection */
 connect().then(() => {
