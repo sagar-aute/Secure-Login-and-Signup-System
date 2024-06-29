@@ -84,6 +84,9 @@ export default function Recovery() {
           <div className="text-center py-4">
             <span className='text-gray-500'>Can't get OTP? <button onClick={resendOTP} className='text-red-500'>Resend</button></span>
           </div>
+          <div className="text-center py-4">
+              <span className='text-red-500'>OTP - Working with a Nodemailer test account, I used Mailgen for Gmail, but it is not functioning correctly. I will update it once I identify the issue.</span>
+          </div>
 
         </div>
       </div>

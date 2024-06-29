@@ -69,8 +69,11 @@ export default function Password() {
 
               <div className="text-center py-4">
                 <span className='text-gray-500'>Forgot Password? <Link className='text-red-500' to="/recovery">Recover Now</Link></span>
+                
               </div>
-
+              <div className="text-center py-4">
+              <span className='text-red-500'>OTP - Working with a Nodemailer test account, I used Mailgen for Gmail, but it is not functioning correctly. I will update it once I identify the issue.</span>
+              </div>
           </form>
 
         </div>
